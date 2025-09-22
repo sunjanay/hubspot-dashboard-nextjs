@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
 
 /**
  * Dashboard data API route.
@@ -409,7 +408,7 @@ function generateCharts(tickets: HubSpotTicket[]): DashboardResponse['charts'] {
         color: '#2E86AB',
         cornerradius: 4
       },
-      text: filteredGroups.map(([label, count]) => count.toString()),
+      text: filteredGroups.map(([, count]) => count.toString()),
       textposition: 'outside',
       textfont: { size: 14, weight: 'bold', color: '#0f172a' }
     }],
@@ -450,7 +449,7 @@ function generateCharts(tickets: HubSpotTicket[]): DashboardResponse['charts'] {
   };
 }
 
-export async function GET(request: NextRequest): Promise<NextResponse> {
+export async function GET(): Promise<NextResponse> {
   try {
     console.log('Fetching HubSpot tickets...');
     const tickets = await fetchHubSpotTickets();
