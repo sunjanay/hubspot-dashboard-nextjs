@@ -380,19 +380,19 @@ function generateCharts(tickets: HubSpotTicket[]): DashboardResponse['charts'] {
 
   ages.forEach(age => {
     if (age < 18) {
-      ageGroupsOrdered[0][1]++;
+      ageGroupsOrdered[0]![1]++;
     } else if (age < 25) {
-      ageGroupsOrdered[1][1]++;
+      ageGroupsOrdered[1]![1]++;
     } else if (age < 35) {
-      ageGroupsOrdered[2][1]++;
+      ageGroupsOrdered[2]![1]++;
     } else if (age < 45) {
-      ageGroupsOrdered[3][1]++;
+      ageGroupsOrdered[3]![1]++;
     } else if (age < 55) {
-      ageGroupsOrdered[4][1]++;
+      ageGroupsOrdered[4]![1]++;
     } else if (age < 65) {
-      ageGroupsOrdered[5][1]++;
+      ageGroupsOrdered[5]![1]++;
     } else {
-      ageGroupsOrdered[6][1]++;
+      ageGroupsOrdered[6]![1]++;
     }
   });
 
