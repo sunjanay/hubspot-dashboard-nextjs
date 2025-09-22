@@ -401,8 +401,8 @@ function generateCharts(tickets: HubSpotTicket[]): DashboardResponse['charts'] {
 
   const ageChart = filteredGroups.length > 0 ? {
     data: [{
-      x: filteredGroups.map(([label, count]) => count),
-      y: filteredGroups.map(([label, count]) => label),
+      x: filteredGroups.map(([, count]) => count),
+      y: filteredGroups.map(([label]) => label),
       type: 'bar',
       orientation: 'h', // Horizontal bar chart like Python version
       marker: {
