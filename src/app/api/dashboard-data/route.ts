@@ -301,7 +301,7 @@ function generateCharts(tickets: HubSpotTicket[]): DashboardResponse['charts'] {
     runningCounts.push(index + 1);
     runningTotal += item.amount;
     runningTotals.push(runningTotal);
-    dates.push(item.date.toISOString().split('T')[0]);
+    dates.push(item.date?.toISOString().split('T')[0] || '');
   });
 
   const crisisChart = {
