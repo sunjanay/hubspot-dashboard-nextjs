@@ -397,7 +397,7 @@ function generateCharts(tickets: HubSpotTicket[]): DashboardResponse['charts'] {
   });
 
   // Filter out empty groups but keep order
-  const filteredGroups = ageGroupsOrdered.filter(([label, count]) => count > 0);
+  const filteredGroups = ageGroupsOrdered.filter(([, count]) => count > 0);
 
   const ageChart = filteredGroups.length > 0 ? {
     data: [{
